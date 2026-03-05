@@ -1,0 +1,71 @@
+<div class="min-h-screen bg-brand-white animate-fade-in-up">
+
+  <!-- Section 1: Hero Banner -->
+
+  <section class="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-20"
+         style="background-image: url('https://www.asvtelefonica.com/wp-content/uploads/2021/11/banner-cabecera-secciones-asv.jpg')"></div>
+    <div class="relative max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <div class="w-12 h-px bg-brand-light-blue"></div>
+        <span class="text-brand-light-blue text-xs tracking-[0.3em] uppercase font-medium">Nuestros</span>
+        <div class="w-12 h-px bg-brand-light-blue"></div>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-brand-white mb-6 tracking-tight">
+        <span class="font-medium">Servicios</span>
+      </h1>
+      <p class="text-sm md:text-base text-brand-white max-w-3xl mx-auto font-light tracking-[0.2em] uppercase">
+        +{{ content().company.yearsExperience }} años de Experiencia en el área de las Telecomunicaciones y Redes
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Title and description -->
+
+  <section class="w-full py-12 px-6 bg-white flex flex-col items-center text-justify">
+    <h2 class="text-xl md:text-2xl font-bold text-[#1a2a4a] uppercase tracking-wide mb-6 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-blue-500 after:mx-auto after:mt-3">
+      {{ content().companyServices.title }}
+    </h2>
+    <p class="text-gray-500 max-w-4xl text-sm md:text-base leading-relaxed">
+      {{ content().companyServices.description }}
+    </p>
+  </section>
+
+  <!-- Section 3: Services grid -->
+
+  <section class="w-full px-6 pb-14 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200">
+        @for (item of content().companyServices.items; track item.title) {
+          <div class="flex flex-col items-center justify-center gap-3 p-6 text-center bg-white hover:bg-blue-50 transition-colors duration-200 h-48">
+            <div class="w-10 h-10 flex items-center justify-center"
+                 [innerHTML]="sanitizeSvg(item.svg)">
+            </div>
+            <span class="text-gray-700 text-xs font-semibold leading-snug uppercase tracking-wide">
+              {{ item.title }}
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Evidence grid -->
+
+  <section class="w-full px-6 pb-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto pt-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        @for (evidence of content().companyServices.evidences; track evidence.alt) {
+          <div class="overflow-hidden aspect-square bg-gray-200">
+            <img
+              [src]="evidence.imgUrl"
+              [alt]="evidence.alt"
+              class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+            />
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</div>
