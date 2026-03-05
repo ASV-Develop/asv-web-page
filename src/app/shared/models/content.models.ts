@@ -24,6 +24,24 @@ export interface Service {
   image: string;
 }
 
+export interface CompanyServices {
+  image: string;
+  title: string;
+  description: string;
+  items: ServiceItems[];
+  evidences: EvidenceItems[];
+}
+
+export interface ServiceItems {
+  title: string;
+  svg: string;
+}
+
+export interface EvidenceItems {
+  imgUrl: string;
+  alt: string;
+}
+
 export interface Brand {
   name: string;
   logoUrl: string | null;
@@ -33,6 +51,7 @@ export interface SiteContent {
   company: CompanyInfo;
   contact: ContactInfo;
   services: Service[];
+  companyServices: CompanyServices;
   brands: Brand[];
 }
 
