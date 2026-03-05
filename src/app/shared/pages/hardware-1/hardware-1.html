@@ -2,7 +2,7 @@
 <div class="min-h-screen bg-brand-white animate-fade-in-up">
 
   <!-- Banner -->
-  <div class="relative flex items-center top-0 w-full py-24 lg:py-32 px-4 lg:px-8 overflow-hidden">
+  <section class="relative flex items-center top-0 w-full py-24 lg:py-32 px-4 lg:px-8 overflow-hidden">
     <img src="assets/images/hardware-page/banner-cabecera-secciones-asv.jpg"
          alt="Banner ASV Telefónica"
          class="absolute inset-0 w-full h-full object-cover object-center">
@@ -16,22 +16,19 @@
           <div class="w-12 h-px bg-brand-light-blue"></div>
         </div>
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">
-          Venta de <br> <b>EQUIPOS</b>
+          Venta de<br> <b>EQUIPOS</b>
         </h1>
-        <p class="text-lg md:text-xl text-brand-white/90 max-w-2xl">
-          +28 AÑOS DE EXPERIENCIA EN EL ÁREA DE LAS TELECOMUNICACIONES Y REDES
+        <p class="text-lg text-brand-light-gray/80 max-w-2xl mx-auto font-light tracking-wide">
+          +{{ content().company.yearsExperience }} años de Experiencia en el área de las Telecomunicaciones y Redes.
         </p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!--Content-->
-  <div>
-
-    <!--Sections-->
     <div class="flex flex-col items-center max-w-7xl mx-auto my-16 px-8 gap-16">
       <!--Telecommunications-->
-      <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <section class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="flex flex-col text-center lg:text-left text-brand-navy gap-4">
           <span class="uppercase text-2xl font-bold">Telecomunicaciones</span>
           <span class="text-brand-medium-gray">Venta de Aparatos telefónicos convencional, Centrales Telefónicas análogas, Digital o IP de las más prestigiosas marcas, sistemas de CCTV.</span>
@@ -75,10 +72,10 @@
           <img src="assets/images/hardware-page/telecomunicaciones-1.jpg" alt="Telecomunicaciones" class="max-w-auto lg:max-w-64 lg:h-128 object-cover object-center shadow-lg">
           <img src="assets/images/hardware-page/telecomunicaciones-2.jpg" alt="Telecomunicaciones" class="hidden lg:inline max-w-64 lg:h-128 object-cover object-center shadow-lg">
         </div>
-      </div>
+      </section>
 
       <!--Electricity-->
-      <div class="flex flex-col lg:flex-row gap-16 items-center">
+      <section class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="order-2 lg:order-1 flex flex-col lg:flex-row gap-1">
           <img src="assets/images/hardware-page/electricidad-1.jpg" alt="Telecomunicaciones" class="max-w-auto lg:max-w-64 lg:h-128 object-cover object-center shadow-lg">
           <img src="assets/images/hardware-page/electricidad-2.jpg" alt="Telecomunicaciones" class="hidden lg:inline max-w-64 lg:h-128 object-cover object-center shadow-lg">
@@ -127,7 +124,6 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </div>
 </div>

@@ -11,9 +11,11 @@ import { ContentService } from '../../services/content.service';
 })
 export class Hardware1 {
   private router = inject(Router);
-  private content = inject(ContentService)
+  private contentService = inject(ContentService)
 
-  localLogo = signal(this.content.getLocalLogoUrl());
+  localLogo = signal(this.contentService.getLocalLogoUrl());
+
+  content = this.contentService.siteContent;
 
   constructor() {
     if (typeof window !== 'undefined') {
