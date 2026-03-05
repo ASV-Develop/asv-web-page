@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<main class="container">
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Sistemas Eléctricos — Cableado Estructurado</h1>
+        <p>Diseño, instalación y certificación de redes cableadas para oficinas e industrias.</p>
+        <a routerLink="#contacto" class="btn-cta">Solicitar Cotización</a>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="cards">
+            <article class="card" *ngFor="let s of services">
+                <h3>{{ s.title }}</h3>
+                <ul>
+                    <li *ngFor="let b of s.bullets">{{ b }}</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Detalle técnico (accordion simple) -->
+    <section class="technical">
+        <h2>Alcance técnico</h2>
+        <details>
+            <summary>Alcance del servicio — Cableado horizontal y backbone</summary>
+            <p>Inspección del sitio, tendido, terminaciones, pruebas de certificación y entrega de reportes.</p>
+        </details>
+
+        <details>
+            <summary>Normativas y estándar aplicados</summary>
+            <p>Trabajamos siguiendo TIA/EIA y recomendaciones ISO/IEC para cableado estructurado.</p>
+        </details>
+    </section>
+
+    <!-- Formulario de contacto placeholder -->
+    <section id="contacto" class="contact">
+        <h2>Contáctenos</h2>
+        <app-contact-form></app-contact-form>
+    </section>
+
+    <!-- Marcas -->
+    <section class="brands">
+        <h4>Trabajamos con:</h4>
+        <div class="logos">
+            <img *ngFor="let brand of brands" [src]="brand.logoUrl || '/assets/logos/placeholder.png'" [alt]="brand.name">
+        </div>
+    </section>
+</main>
+
+<app-footer></app-footer>
