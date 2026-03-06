@@ -223,23 +223,17 @@ import { ContentService } from '../../services/content.service';
           </div>
 
           <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
-            @for (brand of content().brands; track brand.name) {
+            @for (brand of brands; track brand.name) {
               <div
                 class="flex flex-col items-center justify-center py-4 opacity-60 hover:opacity-100 transition-opacity"
               >
-                @if (brand.logoUrl) {
-                  <img
-                    [src]="brand.logoUrl"
-                    [alt]="brand.name"
-                    class="h-8 object-contain brightness-0 invert"
-                  />
-                } @else {
-                  <div class="h-8 flex items-center justify-center">
-                    <span class="text-xl font-light text-brand-white">{{
-                      brand.name.charAt(0)
-                    }}</span>
-                  </div>
-                }
+                <img
+                  [src]="brand.logoUrl"
+                  [alt]="brand.name"
+                  [class]="
+                    brand.noInvert ? 'h-8 object-contain' : 'h-8 object-contain brightness-0 invert'
+                  "
+                />
               </div>
             }
           </div>
@@ -320,6 +314,21 @@ export class HomePage {
   content = this.contentService.siteContent;
   navItems = signal(this.contentService.getNavItems());
   localLogo = signal(this.contentService.getLocalLogoUrl());
+
+  brands = [
+    { name: 'ALCATEL-LUCENT', logoUrl: '/assets/images/brands/alcatel-lucent.png' },
+    { name: 'PANASONIC', logoUrl: '/assets/images/brands/panasonic.png' },
+    { name: 'TRENDNET', logoUrl: '/assets/images/brands/trendnet.png' },
+    { name: 'LOGITECH', logoUrl: '/assets/images/brands/logitech.png' },
+    { name: 'LEVITON', logoUrl: '/assets/images/brands/leviton.png' },
+    { name: 'PANDUIT', logoUrl: '/assets/images/brands/panduit.svg' },
+    { name: 'COMMSCOPE', logoUrl: '/assets/images/brands/commscope.png' },
+    { name: 'DIXON', logoUrl: '/assets/dixon.svg', noInvert: true },
+    { name: 'DAHUA', logoUrl: '/assets/images/brands/dahua.png' },
+    { name: 'HIKVISION', logoUrl: '/assets/images/brands/hikvision.png' },
+    { name: 'UNV', logoUrl: '/assets/images/brands/unv.png' },
+    { name: 'CISCO', logoUrl: '/assets/images/brands/cisco.png' },
+  ];
 
   contactData = [
     {
